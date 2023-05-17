@@ -5,7 +5,9 @@ import java.io.File;
 import com.relevantcodes.extentreports.ExtentReports;
 
 public class ExtentManager {
+	
 public static ExtentReports extent;
+
 public static ExtentReports getInstance()
 {
 	if(extent == null)
