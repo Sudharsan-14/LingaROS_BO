@@ -26,7 +26,7 @@
             <artifactId>exec-maven-plugin</artifactId>
             <version>1.2.1</version>
             <configuration>
-                <mainClass>Tax_Round_Off_Validation_Account_Level_User.java</mainClass>               
+                <mainClass>com.Tax_Round_Off_Validation_Account_Level_User.Main</mainClass>               
             </configuration>
           </plugin>  
         </plugins>
