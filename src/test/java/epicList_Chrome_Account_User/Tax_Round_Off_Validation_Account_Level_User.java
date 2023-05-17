@@ -2,6 +2,7 @@ package epicList_Chrome_Account_User;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -9,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -20,7 +20,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -71,6 +70,7 @@ public class Tax_Round_Off_Validation_Account_Level_User {
 		Thread.sleep(15000);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test(priority = 1)
 	public void login() throws Exception {
 		Thread.sleep(2000);
@@ -636,7 +636,8 @@ public class Tax_Round_Off_Validation_Account_Level_User {
 		driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
 		// driver.findElement(By.tagName("html")).sendKeys(Keys.ARROW_DOWN);
 
-		WebDriverWait wait1 = new WebDriverWait(driver, 30);
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+//		Thread.sleep(3000);
 		WebElement ele11 = driver.findElement(By.xpath(excel.getData(3, 705, 1)));
 
 		// Check weather the report is available for the selected time period
@@ -910,7 +911,7 @@ public class Tax_Round_Off_Validation_Account_Level_User {
 			String s = "data:image/png;base64," + scnShot;
 			test.log(LogStatus.INFO, test.addScreenCapture(s));
 
-			WebDriverWait wait1 = new WebDriverWait(driver, 30);
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
 			WebElement ele11 = driver.findElement(By.xpath(excel.getData(3, 705, 1)));
 
 			// Check Weather the Top 5 sub category sale available or not
@@ -1238,7 +1239,7 @@ public class Tax_Round_Off_Validation_Account_Level_User {
 		} catch (Exception fgh) {
 			test.log(LogStatus.PASS, "Menu Item Sale Report available for the Required This Week");
 
-			WebDriverWait wait1 = new WebDriverWait(driver, 30);
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
 			WebElement ele11 = driver.findElement(By.xpath(
 					"//div[@id='main-container']/div[2]/div/div/div[2]/div[2]/div/div/div/div/div[5]/div/div[1]/div/div[1]/div[1]"));
 			// Check Weather the Top 5 menu Item sale available or not
@@ -1491,7 +1492,7 @@ public class Tax_Round_Off_Validation_Account_Level_User {
 		long start = System.currentTimeMillis();
 
 		try {
-			WebDriverWait wait1 = new WebDriverWait(driver, 30);
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
 			WebElement ele11 = driver.findElement(By.xpath("//h3[.='No sale for selected time period']"));
 
 			// Check weather the report is available for the selected time period
@@ -2012,7 +2013,7 @@ public class Tax_Round_Off_Validation_Account_Level_User {
 		} else {
 			test.log(LogStatus.PASS, "Daily Sale Report available for Specific Date");
 
-			WebDriverWait wait1 = new WebDriverWait(driver, 30);
+			WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
 			WebElement ele11 = driver.findElement(By.xpath(excel.getData(3, 705, 1)));
 
 			// Check Weather the Top 5 daily sale available or not

@@ -1,5 +1,6 @@
 package epicList_Chrome_Account_User;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -266,7 +267,7 @@ public class AddEditDelete_Departments {
 			//driver.navigate().refresh();
 			WebElement saveDept=driver.findElement(By.xpath("//div[@role='alert']/span/span"));
 		//	String SaveDept1=saveDept.getText();
-			WebDriverWait wait=new WebDriverWait(driver,60);
+			WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(30));
 			//Check weather the new department is saved or not
 			if(wait.until(ExpectedConditions.visibilityOf(saveDept)).getText().equalsIgnoreCase("Department Saved Successfully"))
 			{
